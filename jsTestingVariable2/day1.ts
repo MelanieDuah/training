@@ -34,6 +34,15 @@
 // HINT: When the user types in an HTML input box,
 //  the user's input is stored as a property of the input element.
 */
+const addTranasction=():void=>{
+    const description:HTMLInputElement=document.getElementById('description') as HTMLInputElement;
+    description.value;
+    
+    const amount : HTMLInputElement=document.getElementById('amount')as HTMLInputElement;
+    amount.value;
 
+    const newArray: TransactionType[]=[];
+    
+}
 
 }
