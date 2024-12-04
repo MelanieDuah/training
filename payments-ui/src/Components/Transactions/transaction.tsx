@@ -1,6 +1,25 @@
+import { useEffect, useState } from "react";
 
-const Transactions = ({transactions}:{transactions: Transaction[]}): React.ReactElement => {
+const Transactions = (): React.ReactElement => {
+  
+  const [data, setData] = useState<Transaction[]>([]);
 
+  useEffect(() => {
+    const api = async () => {
+      const data = await fetch("https://paymentsdemo.neueda.com/api/payment", {
+        method: "GET",
+        headers: {
+          Accept:"application/json"
+        }
+      });
+      const jsonData = await data.json();
+      setData(jsonData);
+    };
+
+    api();
+  }, []);
+  console.log(data);
+  
     return (
         
       <table className="transactions">
@@ -14,24 +33,24 @@ const Transactions = ({transactions}:{transactions: Transaction[]}): React.React
                 <th>Tax Code</th>
                 <th>Tax Rate</th>
                 <th>Type</th>
-                <th>OderId</th>
+                <th>OrderId</th>
             </tr>
         </thead>
-        <tbody>
-            {transactions.map(transaction => 
-            <>
-                <tr>
-                    <td>{transaction.id}</td>
-                    <td>{transaction.date.toDateString()}</td>
-                    <td>{transaction.country}</td>
-                    <td>{transaction.currency}</td>
-                    <td>{transaction.amount}</td>
-                    <td>{transaction.taxCode}</td>
-                    <td>{transaction.taxRate}</td>
-                    <td>{transaction.type}</td>
-                    <td>{transaction.orderId}</td>
+        <tbody> 
+            {data.map(data => 
+          
+                <tr key={data.id}>
+                    <td>{data.id}</td>
+                    <td>{data.date}</td>
+                    <td>{data.country}</td>
+                    <td>{data.currency}</td>
+                    <td>{data.amount}</td>
+                    <td>{data.taxCode}</td>
+                    <td>{data.taxRate}</td>
+                    <td>{data.type}</td>
+                    <td>{data.orderId}</td>
                 </tr>
-            </>)}
+            )}
         </tbody>
       </table>
     );
@@ -42,7 +61,7 @@ const Transactions = ({transactions}:{transactions: Transaction[]}): React.React
       amount: number;
       country: string;
       currency: string;
-      date: Date;
+      date: string;
       orderId: string;
       taxCode: number;
       taxRate: number;
