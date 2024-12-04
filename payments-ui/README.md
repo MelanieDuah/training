@@ -25,6 +25,44 @@ export default {
 }
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+// End of React Day 1 Lab
+
+// Idea of components:
+// Header, Menu, TransactionList,Transaction, Search (example on the board)
+
+// export type Transaction = {
+//   id: number;
+//   amount: number;
+//   country: string;
+//   currency: string;
+//   date: string;
+//   orderId: string;
+//   taxCode: number;
+//   taxRate: number;
+//   type: string;
+// };
+
+// const data: Transaction[] = [
+//   {
+//     id: 139235,
+//     amount: 60,
+//     country: "usa",
+//     currency: "usd",
+//     date: "2018-12-30",
+//     orderId: "21213627",
+//     taxCode: 0,
+//     taxRate: 0,
+//     type: "VISA",
+//   },
+//   {
+//     id: 139236,
+//     amount: 35,
+//     country: "usa",
+//     currency: "usd",
+//     date: "2018-12-30",
+//     orderId: "21213448",
+//     taxCode: 0,
+//     taxRate: 0,
+//     type: "VISA",
+//   },
+// ];

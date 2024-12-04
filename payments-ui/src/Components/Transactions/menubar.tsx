@@ -8,22 +8,28 @@
 // • A List of all the transactions which are found from the search
 // • Ensure that there are no errors when the code is run (check the console).
 
-const Manubar = (): React.ReactElement => {
+
+const Menubar = (): React.ReactElement => {
 
     return (
       <>
         <nav className="menu-bar">
-            <div>
-            <button>find a transaction </button>
-            <button>new transaction </button>
-            </div>
+           <span className="brand">Payment Application</span>
+           <ul className="nav-items">
+            <li>
+              <button>Find A Transaction </button>
+            </li>
+            <li>
+              <button>New Transaction </button>
+            </li>
+           </ul>
             
             </nav> 
       </>
     );
   };
-  export default Manubar;
+  export default Menubar;
+  
 
-  type ManubarType = {  transaction: string; NewTransaction: string };
   
 
