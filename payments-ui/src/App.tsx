@@ -1,4 +1,5 @@
 import './App.css'
+import Form from './Components/payments/payment'
 import Menubar from './Components/Transactions/menubar'
 import Search from './Components/Transactions/search'
 import Transactions from './Components/Transactions/transaction'
@@ -10,6 +11,7 @@ const App=() =>{
     <Menubar />
     <Search />
     <Transactions/>
+    <Form />
     </>
   )
 }

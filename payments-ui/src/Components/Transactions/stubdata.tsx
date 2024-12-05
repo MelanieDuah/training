@@ -16,4 +16,4 @@ const requests = {
  const paymentTransaction = {
 	getAllPayments: (): Promise<Transaction[]> => requests.get('payment'),
 };
-export default paymentTransaction;
+export default paymentTransaction;    

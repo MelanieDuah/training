@@ -13,7 +13,7 @@ const Transactions = (): React.ReactElement => {
 
     return (
 
-        <table className="transactions">
+        <table className="transactions">  
             <thead>
                 <tr>
                     <th>Id</th>
