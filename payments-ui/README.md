@@ -1,68 +1,28 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+# Steps for MFEs
+Note:   npm create vite@latest my-react-app --template react-ts(to create the project)/vite@5.2
+- 1 Install dependencies: webpack-cli  webpack-merge html-webpack-plugin ts-loader style-loader css-loader (npm install -D webpack-cli webpack-merge html-webpack-plugin ts-loader style-loader css-loader)
+- 2 Create and configure the webpack.config.cjs file at the root of the MFE
+- 3 Add start option in package.json(npm install common js)
+- 4 Emit to true in tsconfig.json and remove     "allowImportingTsExtensions": true,
+- 5 Rename maine.tsx -> index.tsx (care about webpack config and index)
+-6 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+``
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+# Resources 
+- Course website: https://bit.ly/3VdyfX1
+- VM login: administrator@c0nygre
+- Rest API URL: https://paymentsdemo.neueda.com/swagger-ui/#/  Base URL: https://paymentsdemo.neueda.com
+- BitBicket URL with exercices solutions and resources: https://bitbucket.org/treelevel/react-mfe-tampa:
+- Augie Demo Repo: https://github.com/schaua/react-mfe
+- React logo is not spinning? https://stackoverflow.com/questions/66813198/react-app-localhost3000-logo-not-spinning
+- Create a react app: npm create vite@5.2 project-name -- --template react-ts
+- EasyRetro: https://easyretro.io/publicboard/NTDqkkm6utgJFD9cdBrdb4sI6n72/7560d5ec-b5d5-4f4e-bac3-06b7ca3793cb
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
 
 // End of React Day 1 Lab
 
-// Idea of components:
-// Header, Menu, TransactionList,Transaction, Search (example on the board)
-
-// export type Transaction = {
-//   id: number;
-//   amount: number;
-//   country: string;
-//   currency: string;
-//   date: string;
-//   orderId: string;
-//   taxCode: number;
-//   taxRate: number;
-//   type: string;
-// };
-
-// const data: Transaction[] = [
-//   {
-//     id: 139235,
-//     amount: 60,
-//     country: "usa",
-//     currency: "usd",
-//     date: "2018-12-30",
-//     orderId: "21213627",
-//     taxCode: 0,
-//     taxRate: 0,
-//     type: "VISA",
-//   },
-//   {
-//     id: 139236,
-//     amount: 35,
-//     country: "usa",
-//     currency: "usd",
-//     date: "2018-12-30",
-//     orderId: "21213448",
-//     taxCode: 0,
-//     taxRate: 0,
-//     type: "VISA",
-//   },
-// ];
