@@ -1,28 +1,19 @@
-// import { Transaction } from "./transaction";
+import axios, { AxiosResponse } from 'axios'
+import {Transaction} from './transaction'
 
-// const transactions: Transaction[] = [
-//   {
-//     id: 139235,
-//     amount: 60,
-//     country: "usa",
-//     currency: "usd",
-//     date: new Date(2018,12,30),
-//     orderId: "21213627",
-//     taxCode: 0,
-//     taxRate: 0,
-//     type: "VISA",
-//   },
-//   {
-//     id: 139236,
-//     amount: 35,
-//     country: "usa",
-//     currency: "usd",
-//     date: new Date(2018,12,30),
-//     orderId: "21213448",
-//     taxCode: 0,
-//     taxRate: 0,
-//     type: "VISA",
-//   },
-// ];
+const instance = axios.create({
+	baseURL: 'https://paymentsdemo.neueda.com/api/',
+  headers: {
+         Accept:"application/json"
+      },
+});
 
-// export default transactions;
+const responseBody = (response: AxiosResponse) => response.data;
+
+const requests = {
+	get: (url: string) => instance.get(url).then(responseBody),
+};
+ const paymentTransaction = {
+	getAllPayments: (): Promise<Transaction[]> => requests.get('payment'),
+};
+export default paymentTransaction;
