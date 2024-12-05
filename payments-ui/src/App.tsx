@@ -1,18 +1,18 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
-import Form from './Components/payments/payment'
-import Menubar from './Components/Transactions/menubar'
-import Search from './Components/Transactions/search'
-import Transactions from './Components/Transactions/transaction'
+import Home from './View/Home'
+// import HomePage from './Components/Transactions/HomePage'
 
 const App=() =>{
 
   return (
-    <>
-    <Menubar />
-    <Search />
-    <Transactions/>
-    <Form />
-    </>
+    <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<Home/>}>Find A Transaction</Route> 
+      <Route path='/findTransaction' element={<Home/>}>Find A Transaction</Route>
+      <Route path='/newTransaction'  element={<Home/>}>New Transaction </Route>
+    </Routes>
+    </BrowserRouter>
   )
 }
 

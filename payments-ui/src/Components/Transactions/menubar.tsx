@@ -8,9 +8,11 @@
 // • A List of all the transactions which are found from the search
 // • Ensure that there are no errors when the code is run (check the console).
 
+import { useNavigate } from "react-router-dom";
+
 
 const Menubar = (): React.ReactElement => {
-
+         const navigate=useNavigate();
     return (
       <>
         <nav className="menu-bar">
@@ -20,7 +22,7 @@ const Menubar = (): React.ReactElement => {
               <button>Find A Transaction </button>
             </li>
             <li>
-              <button>New Transaction </button>
+              <button onClick={()=>{navigate(-1)}}>New Transaction </button>
             </li>
            </ul>
             
